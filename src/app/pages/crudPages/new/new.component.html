@@ -1,0 +1,55 @@
+<app-subheader></app-subheader>
+<div class="container">
+
+    <h3 class="mx-auto text-center mt-4">{{titulo}}</h3>
+    <div class="row ">
+        <div class="col-md-6 mx-auto text-left">
+            <form #articleForm="ngForm" (ngSubmit)="onSubmit(articleForm)">
+                <div class="form-group">
+                    <label for="title">Titulo </label>
+                    <input class="form-control" type="text" name="title" #title="ngModel" [(ngModel)]="article.title"
+                        required />
+                    <span class="alert alert-danger" *ngIf="title.touched && !title.valid">
+                        El titulo es obligatorio
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="content">Contenido</label>
+                    <textarea class="form-control" name="content" #content="ngModel" [(ngModel)]="article.content"
+                        required></textarea>
+                    <span class="alert alert-danger" *ngIf="content.touched && !content.valid">
+                        El contenido es obligatorio
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Imagen </label>
+                    <span class="image" *ngIf="fileThumb" style="float:none;">
+                        <br>
+                        <img [src]="fileThumb" style="width:100px;" />
+                        <br>
+                    </span>
+                </div>
+
+
+                <div class="custom-file" id="customFile">
+                    <input type="file" accept='image/*' type="file" name="image" placeholder="Subir Imagen"
+                        (change)='fileChangeEvent($event)' class="custom-file-input" aria-describedby="fileHelp">
+                    <label class="custom-file-label" for="exampleInputFile">
+                        Seleccionar Archivo
+                    </label>
+                </div>
+
+                <br>
+                <br>
+                <input class="btn btn-outline-secondary" type="submit" value="Guardar" />
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+
+<app-messages *ngIf="modal" [title]="'Éxito'" [message]="modal" [ruta]="'/crud'"></app-messages>
+
+<app-messages *ngIf="mensaje" [title]="'Oops!'" [message]="mensaje" [ruta]="'/crud/login'"></app-messages>

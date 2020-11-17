@@ -1,0 +1,17 @@
+.msgPrivado{
+    font-style: italic;
+    opacity: 0.6;
+}
+
+.msgPrivadoMio{
+    font-style: italic;
+    opacity: 0.6;
+}
+
+.msg{
+    color: black;
+}
+
+.img{
+    z-index: 100;
+}

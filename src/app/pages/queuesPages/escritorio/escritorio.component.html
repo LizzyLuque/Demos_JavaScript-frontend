@@ -1,0 +1,11 @@
+<div class="container pt-5">
+    <h1>Escritorio <span *ngIf="escritorio">: {{escritorio.nombre}}</span></h1>
+    <h4 *ngIf="actual.id!=''">Atendiendo a <small >{{actual.id}}</small></h4>
+    <h5 *ngIf="mensaje">{{mensaje}}</h5>
+    <hr>
+
+    <button class="btn btn-primary btn-lg mt-5" (click)="siguienteTicket()">
+        Atender siguiente ticket
+    </button>
+</div>
+<app-footer-sockets></app-footer-sockets>

@@ -1,0 +1,136 @@
+<div class="container mt-3">
+
+    <div class="row text-justify">
+
+        <div class="col-md-8  mx-auto ">
+            <strong>Demos JavaScript </strong> es un proyecto personal creado con la finalidad de mostrar las
+            habilidades
+            aprendidas en mis cursos de Udemy:
+            <ul class="mt-2">
+                <li>Máster en JavaScript: Aprender Js, jQuery, Angular, NodeJS </li>
+                <li>Máster en frameworks para JavaScript </li>
+                <li>Aplicaciones en tiempo real con sockets y rest.</li>
+                <li>JavaScript ES6 Course: ECMA Script 6 (Step by Step).</li>
+                <li>Angular 10 Course: Build Angular Apps (Step by Step).</li>
+                <li>Learn Bootstrap - For Beginners.</li>
+            </ul>
+            Demos JavaScript consta de 5 módulos, los cuales se describen a continuación:
+        </div>
+    </div>
+    <div class="row mt-3 text-justify">
+        <div class="col-md-8  mx-auto ">
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                <li class="nav-item">
+                    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat"
+                        aria-selected="true">Chat</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="colas-tab" data-toggle="tab" href="#colas" role="tab" aria-controls="colas"
+                        aria-selected="false">Sistema de Colas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="crud-tab" data-toggle="tab" href="#crud" role="tab" aria-controls="crud"
+                        aria-selected="false">CRUD</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="chart-tab" data-toggle="tab" href="#chart" role="tab" aria-controls="chart"
+                        aria-selected="false">Gráficas</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="maps-tab" data-toggle="tab" href="#maps" role="tab" aria-controls="maps"
+                        aria-selected="false">Mapas</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+                    <br>
+                    El módulo del chat contiene las siguientes funcionalidades:
+                    <ol>
+                        <li>Sesión local y recuperación la misma utilizando LocalStorage </li>
+                        <li>Salas de chat</li>
+                        <li>Envío de mensajes privados </li>                        
+                        <li>Utilidades para el usuario (Emoticones y cambio de color en el nick)</li>
+                    </ol>
+                    Entre los lenguajes, frameworks y librerías utilizados para programar este módulo, destacan los siguientes:
+                    <ul>
+                        <li><strong>FrontEnd:</strong> JavaScript, Typescript, Angular, HTML, CSS, Bootstrap, socket.io  </li>
+                        <li><strong>BackEnd:</strong> NodeJS, Socket.io, express</li>
+                    </ul>
+
+                </div>
+                <div class="tab-pane fade" id="colas" role="tabpanel" aria-labelledby="colas-tab">
+                    <br>
+                    El sistema de colas consta de las siguientes funcionalidades:
+                    <ol>
+                        <li>Pantalla de atención al público</li>
+                        <li>Generación de tickets por área de atención  </li>                        
+                        <li>Atención de tickets por cada escritorio </li>
+                    </ol>
+                    Entre los lenguajes, frameworks y librerías utilizados para programar este módulo, destacan los siguientes:
+                    <ul>
+                        <li><strong>FrontEnd:</strong> JavaScript, Typescript, Angular, HTML, CSS, Bootstrap, socket.io  </li>
+                        <li><strong>BackEnd:</strong> NodeJS, Socket.io, express</li>
+                    </ul>
+
+                </div>
+                <div class="tab-pane fade" id="crud" role="tabpanel" aria-labelledby="crud-tab">
+                    <br>
+                    El módulo llamado CRUD contiene las siguientes funcionalidades:
+                    <ol>
+                        <li>Autenticación (registro de usuarios e inicio de sesión)</li>
+                        <li>Resguardo de paginas sensibles mediante sesión local y recuperación la misma utilizando LocalStorage</li>
+                        <li>Un crud de artículos</li>
+                        <li>Consumo de APIs con autorización via token jwt</li>                        
+                        
+                    </ol>
+                    Entre los lenguajes, frameworks y librerías utilizados para programar este módulo, destacan los siguientes:
+                    <ul>
+                        <li><strong>FrontEnd:</strong> JavaScript, Typescript, Angular, HTML, CSS, Bootstrap, moment </li>
+                        <li><strong>BackEnd:</strong> NodeJS, express, mongoose, JWT</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="chart" role="tabpanel" aria-labelledby="chart-tab">
+                    <br>
+                    Las funcionalidades del módulo de gráficas son:
+                    <ol>
+                        <li>Gráfica de linea que muestra las ventas en tiempo real </li> 
+                        <li>Gráfica de barras que muestra los resultados de una encuesta en tiempo real</li>
+                        <li>Pantallas para alimentar los datos de las gráficas</li>
+                    </ol>
+                    Entre lenguajes, frameworks y librerías utilizados para programar este módulo, destacan los siguientes:
+                    <ul>
+                        <li><strong>FrontEnd:</strong> JavaScript, Typescript, Angular, HTML, CSS, Bootstrap, socket.io, ng2-charts  </li>
+                        <li><strong>BackEnd:</strong> NodeJS, Socket.io, express</li>
+                    </ul>                    
+                </div>
+                <div class="tab-pane fade" id="maps" role="tabpanel" aria-labelledby="maps-tab">
+                    <br>
+                    EL módulo Mapas consta de:
+                    <ol>
+                        <li>Generación de marcadores</li>
+                        <li>Movimiento de los marcadores </li>
+                        <li>Las anteriores funcionalidades se notifican en tiempo real al restos de los clientes 
+                            conectados, mismo ejemplo utilizand MapBox y Google Maps </li>
+                    </ol>
+                    Entre los lenguajes, frameworks y librerías utilizados para programar este módulo, destacan los siguientes:
+                    <ul>
+                        <li><strong>FrontEnd:</strong> JavaScript, Typescript, Angular, HTML, CSS, Bootstrap, GoogleMaps, MapBox  </li>
+                        <li><strong>BackEnd:</strong> NodeJS, Socket.io, express</li>
+                    </ul>  
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+<app-footer class="mt-1"></app-footer>

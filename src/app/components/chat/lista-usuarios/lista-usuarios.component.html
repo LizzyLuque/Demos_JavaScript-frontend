@@ -1,0 +1,49 @@
+<h4 class="mt-2">Usuarios conectados en: <span class="badge badge-primary mr-2">{{usuario.getSala()}}</span>   </h4>
+<hr/>
+
+<div class="list-group text-left">
+    <div  class="li-class"  *ngFor="let usr of usuariosActivosObs | async">
+      <span  *ngIf="usr.sala===usuario.sala" class="list-group-item" [style.color]= "usr.color" >
+        {{usr.nombre}}
+        <!-- <spam class="badge badge-primary mr-2">{{usr.sala}}</spam>      -->
+
+        <a  *ngIf="usr._id!=usuario.socket" data-toggle="modal" data-target="#exampleModal" 
+         (click)="setUser( usr.nombre , usr._id )"
+         style="font-size:x-small; font-weight: bold; text-decoration: none; cursor: pointer;" class="btn-sm btn-light ">Enviar Mensaje Privado</a>
+        
+         <input *ngIf="usr._id==usuario.socket"  class="float-right" (change)="cambiarColor($event)" value="{{usr.color}}" type="color">
+        </span> 
+      </div>
+  </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Mensaje Privado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Para:</label>
+              <input type="text" class="form-control" id="recipient-name" disabled value="{{message.para}}">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Mensaje:</label>
+              <textarea class="form-control" name="content" #content="ngModel"
+              [(ngModel)]="message.cuerpo"   ></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancelar" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" (click)="sendMensajePrivado($event)" class="btn btn-primary">Enviar Mensaje</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

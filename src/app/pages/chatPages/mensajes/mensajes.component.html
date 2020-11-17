@@ -1,0 +1,19 @@
+<div class="row mt-4">
+    <div class="col-md-6"></div>
+    <div class="col-md-5 text-left ml-5 pl-5">
+        <h2>Usuario: <small class="badge badge-info" [style.background-color]="wsService.getUser().getColor()" >{{wsService.getUser().getNombre()}}</small>
+        <small class="btn btn-outline-danger ml-3 pt-0 pb-0 mt-2" (click)="salir()">Salir</small></h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6 pl-5 ml-4">
+        <app-chat [message]="mensaje" ></app-chat>
+    </div>
+
+    <div class="col-5 ml-5 pt-1">
+        <app-lista-usuarios (PrivateMsg)="mostrarMsgPrivado($event)"></app-lista-usuarios>
+    </div>
+</div>
+
+<app-footer-sockets></app-footer-sockets>

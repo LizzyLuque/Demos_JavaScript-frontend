@@ -1,0 +1,45 @@
+<h1>Mensajes</h1>
+<hr>
+
+<div id="chat-mensajes">
+  <li [style.color]= "msg.color" [ngClass]="msg.clase" class="list-group-item text-left" *ngFor="let msg of mensajes">
+    <div style="min-height: auto; display: inline-block;">
+      <span class="float-left "   style="font-weight: bold;">{{ msg.de }} : </span>
+      <span class="float-left" style="max-height: 18px;" [innerHTML]="msg.cuerpo | safehtml"></span>   
+    </div>
+  </li>
+</div>
+
+
+
+<form (ngSubmit)="enviar()">
+  <div class="row">
+    <div class="col-md-10">
+      <input type="text" [(ngModel)]="texto" class="form-control chat-input" name="texto" placeholder="Mensaje..."
+        autofocus autocomplete="off"></div>
+    <div class="col-md-2 d-flex align-items-end">
+      <img src="../../../assets/images/chat.png" (click)="muestraIcons()" width="34px">   
+    </div>
+  </div>
+
+</form>
+
+<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target=".bd-example-modal-sm">Open Modal</button>
+<!-- Modal -->
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="mySmallModalLabel">Elige tu emoticon</h4>
+                <button type="button" class="close" id="cerrarModal"  data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+              <img src="../../../assets/images/emoji2.jpg" (click)="icon($event)" alt="emojis" height="140px">
+            </div>
+        </div>
+    </div>
+</div>
+

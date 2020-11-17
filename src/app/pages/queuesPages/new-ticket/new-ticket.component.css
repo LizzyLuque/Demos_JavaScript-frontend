@@ -1,0 +1,20 @@
+.textBlack{
+    color: black;
+}
+
+.boton{
+    min-height: 90px;
+    padding-top: 31px;
+    border: rgb(151, 151, 151) 1px solid;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 12px; 
+    background-color: rgb(151, 151, 151);
+    color: rgb(48, 47, 47);
+}
+
+.boton:hover{
+    border: rgb(194, 193, 193) 1px solid;
+    background-color:rgb(194, 193, 193);
+    color: rgb(48, 47, 47);
+}

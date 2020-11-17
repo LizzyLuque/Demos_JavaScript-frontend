@@ -1,0 +1,18 @@
+<div id=head>
+<h1>Gráfica dinámica</h1>
+<hr/>
+
+</div>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div style="display: block;">
+            <canvas baseChart width="250" height="200"
+                        [datasets]="lineChartData"
+                        [labels]="lineChartLabels"
+                        [chartType]="'line'"></canvas>
+            </div>        
+    </div>
+</div>
+
+<app-footer-sockets></app-footer-sockets>

@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom text-dark">
+  <strong class="mr-5">Demos JavaScript </strong>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">Home <span
+            class="sr-only">(current)</span></a>
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['active']">Chat <span
+            class="sr-only">(current)</span></a>
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/colas']" [routerLinkActive]="['active']">Sistema de Colas<span
+            class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/crud']" [routerLinkActive]="['active']">CRUD<span
+            class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Gráficas
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" [routerLink]="['/chart']" [routerLinkActive]="['active']">Línea (Ventas)</a>
+          <a class="dropdown-item" [routerLink]="['/alimentar-ventas']" [routerLinkActive]="['active']">Alimentar
+            Ventas</a>
+          <hr>
+          <a class="dropdown-item" [routerLink]="['/encuesta']" [routerLinkActive]="['active']">Barras (Encuesta)</a>
+          <a class="dropdown-item" [routerLink]="['/alimentar-encuesta']" [routerLinkActive]="['active']">Alimentar
+            Encuesta</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Mapas
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" [routerLink]="['/mapbox']" [routerLinkActive]="['active']">MapBox</a>
+          <a class="dropdown-item" [routerLink]="['/google-map']" [routerLinkActive]="['active']">Google Maps</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

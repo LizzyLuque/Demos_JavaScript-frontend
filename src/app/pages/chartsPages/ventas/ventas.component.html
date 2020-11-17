@@ -1,0 +1,25 @@
+<div class="container">
+    <h3 class="mx-auto text-center mt-4">Registe sus ventas</h3>
+    <div class="row ">
+        <div class="col-md-6 mx-auto text-left">
+
+            <form #ventasForm="ngForm" (ngSubmit)="onSubmit(ventasForm)">
+                <div class="row">
+                    <div class="form-group col-md-4 mx-auto" *ngFor="let mes of meses">
+                        <label for="{{mes.id}}">{{mes.name}} </label>
+                        <input class="form-control" type="number" name="{{mes.id}}" [(ngModel)]="mes.value" required
+                            min="0" />
+                    </div>
+                </div>
+                <input class="btn btn-outline-secondary mt-3 mb-5" type="submit" value="Sumar Ventas" />
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+
+<app-messages *ngIf="modal" 
+[title]="'Atención!'" 
+[message]="modal" 
+[ruta]="'/chart'"></app-messages>

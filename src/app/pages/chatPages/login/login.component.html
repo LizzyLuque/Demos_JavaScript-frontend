@@ -1,0 +1,27 @@
+<div class="row justify-content-center">
+    <div class="col-5 mt-5 ">
+        <h1 class="text-center">Login</h1>
+        <hr />
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-3">
+        <form class="p-4" (ngSubmit)="ingresar()">
+            <input type="text" [(ngModel)]="usr.nombre" maxlength="10" name="nombre" class="form-control" placeholder="Nombre de usuario"
+                autofocus required />
+
+                <select [(ngModel)]="usr.sala" name="sala"  class="form-control mt-4" required >
+                    <option value="" selected>Selecciona una sala</option>
+                    <option value="Amigos" >Amigos</option>
+                    <option value="Solteros" >Solteros</option>
+                    <option value="Mayores de 18" >Mayores de 18</option>
+                    <option value="Latinos" >Latinos</option>
+                    <option value="Solo Conversar" >Solo Conversar</option>
+                    <option value="Hot" >Hot</option>
+                </select>                 
+
+            <button [disabled]="usr.nombre.trim().length===0 || usr.sala===''" class="btn btn-primary mt-3 w-50">Ingresar</button>
+        </form>
+    </div>
+</div>
+<app-footer-sockets></app-footer-sockets>

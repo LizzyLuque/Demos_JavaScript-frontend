@@ -1,0 +1,27 @@
+<app-subheader></app-subheader>
+<div class="container mt-5">
+    <section id="content">
+        <div class="row">
+            <div class="col-md-10">
+                <h2 class="subheader float-letf">Artículos disponibles </h2>
+            </div>
+            <div class="col-md-2 ">
+                <small [routerLink]="['/crud/new']" class="btn btn-outline-primary ml-3 pt-0 pb-0 mt-2 float-right">Nuevo Artículo</small>
+            </div>
+        </div>
+        <hr>
+
+        <!--Listado articulos-->
+        <app-list [articles]="articles" [url]="urlAS" [message]="result"></app-list>
+
+        <!--AÑADIR ARTICULOS VIA JS-->
+
+    </section>
+</div>
+
+<app-footer></app-footer>
+
+<app-messages *ngIf="mensaje" 
+[title]="'Oops!'"
+[message]="mensaje"
+[ruta]="'/crud/login'"></app-messages>

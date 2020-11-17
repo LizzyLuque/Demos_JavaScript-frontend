@@ -1,0 +1,51 @@
+<div class="container d-flex align-items-center" style="min-height: 600px;">
+    <div class="w-100">
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <span *ngIf="!ticket" id="lblNuevoTicket">
+                    ...
+                </span>
+
+                <span *ngIf="ticket" id="lblNuevoTicket">
+                    Ticket: {{ticket.id}}
+                </span>
+            </div>
+        </div>
+        <div class="row  mt-4">
+            <div class="col-md-12">
+                <button (click)="nuevo()" class="btn btn-secondary btn-lg">
+                    Generar nuevo ticket
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer-sockets></app-footer-sockets>
+
+
+
+<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target=".bd-example-modal-sm">Open Modal</button>
+<!-- Modal -->
+<div class="modal fade bd-example-modal-sm textBlack" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="mySmallModalLabel">Elige tu asunto</h4>
+                <button type="button" class="close" id="cerrarModal" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <div class="w-100 ">
+                    <div class="row ml-1 mr-1">
+                        <div class="col-6 mb-3"  *ngFor="let esc of escritorios">
+                            <div (click)="generarTicket(esc.id)" class="boton">{{esc.nombre}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

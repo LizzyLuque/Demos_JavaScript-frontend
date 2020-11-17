@@ -1,0 +1,11 @@
+<footer class=" bg-dark text-white fixed-bottom">
+    <div class="container text-right">
+        <div class="row">
+            <div class="col-md-12 text-right">
+                Server Sockets Status:
+                <span *ngIf="wsService.socketStatus.getStatus()" class="text-success">Online</span>
+                <span *ngIf="!wsService.socketStatus.getStatus()" class="text-danger">Disconect</span>
+            </div>
+        </div>
+    </div>
+</footer>

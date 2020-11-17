@@ -1,0 +1,21 @@
+<div class="row h-100">
+    <div class="col-10 ticket-actual d-flex align-items-center">
+        <div *ngIf="actual" class="w-100">
+            <span id="lblTicket1" class="ticket-actual-numero">Ticket {{actual.id}}</span>
+            <br>
+            <span id="lblEscritorio1" class="ticket-actual-escritorio">Escritorio {{actual.escritorio}}</span>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="d-block w-100  d-flex align-items-center" [style.height.%]="altura"
+            *ngFor="let ticket of enAtencion">
+            <div class="w-100">
+                <span id="lblTicket4" class="ticket-secundario">Ticket {{ticket.id}}</span>
+                <br>
+                <span id="lblEscritorio4">Escritorio {{ticket.escritorio}}</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+<app-footer-sockets></app-footer-sockets>

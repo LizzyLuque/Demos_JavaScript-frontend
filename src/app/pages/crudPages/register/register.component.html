@@ -1,0 +1,43 @@
+<div class="login-form">
+  <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+    <h1>Registro</h1>
+    <div class="form-group text-left">
+      <input type="text" [(ngModel)]="usuario.nombre" name="nombre" #nombre="ngModel" placeholder="Nombre"
+        required="required" class="form-control" />
+      <small class="alert alert-danger" *ngIf="nombre.touched && !nombre.valid">
+        El nombre es obligatorio
+      </small>
+    </div>
+    <div class="form-group text-left">
+      <input type="email" [(ngModel)]="usuario.email" name="email" #email="ngModel" placeholder="Email"
+        required="required" class="form-control" />
+      <small class="alert alert-danger" *ngIf="email.touched && !email.valid">
+        El email es obligatorio
+      </small>
+    </div>
+    <div class="form-group text-left">
+      <input type="password" [(ngModel)]="usuario.password" name="password" #password="ngModel" placeholder="Contraseña"
+        required="required" class="form-control" minlength="8" />
+      <small class="alert alert-danger" *ngIf="password.touched && !password.valid">
+        La contraseña es obligatoria (mínimo 8 catacteres)
+      </small>
+    </div>
+    <div class="form-group text-left">
+      <input type="password" class="form-control" minlength="8" [(ngModel)]="confirmPassword" name="confirm"
+        placeholder="Repita la contraseña" required="required" (keyup)="clean()" />
+
+      <small class="alert alert-danger" *ngIf="passwordError">
+        Las contraseñas no coinciden
+      </small>
+    </div>
+    <div *ngIf="mensaje" class="form-group">
+      <small class="alert alert-danger" >
+        {{mensaje}}
+      </small> </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block" [disabled]="!registerForm.form.valid">Registrar</button>
+    </div>
+  </form>
+</div>
+
+<app-footer></app-footer>

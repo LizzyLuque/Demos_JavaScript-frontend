@@ -1,0 +1,33 @@
+<div class="loading" *ngIf="!articles">
+    {{message}}
+</div>
+<div class="loading" *ngIf="articles && articles.length ==0">
+    No hay artículos para mostrar, intentalo de nuevo :)
+</div>
+<div id="articles-list" *ngIf="articles">
+    <article class="row mb-4" id="article-template" *ngFor="let article of articles">
+
+            <div class="col-md-3 "></div>
+            <div class="col-md-3 " *ngIf="article.image; else elseBlock">
+                <img class="img-fluid" src="{{url + '/get-image/' + article.image}}" alt="{{article.title}}" />
+            </div>
+
+            <ng-template #elseBlock>
+                <div class="col-md-3 ">
+                    <img class="img-fluid" src="assets/images/default.jpg" alt="{{article.title}}" />
+                </div>
+            </ng-template>
+
+
+            <div class="col-md-5 text-left">
+                <h2>{{article.title}}</h2>
+                <span>
+                    {{article.date | amLocale:'es' | amTimeAgo}}
+                </span>
+                <br>
+                <a [routerLink]="['/crud/view',article._id]">Leer más</a>
+
+            </div>
+
+    </article>
+</div>

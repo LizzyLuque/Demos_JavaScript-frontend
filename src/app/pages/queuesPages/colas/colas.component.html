@@ -1,0 +1,40 @@
+<h1 class="mt-5">Sistema de Colas</h1>
+<hr>
+
+<div class="row">
+    <div class="col-md-3 mx-auto"></div>
+    <div class="col-md-3 mx-auto">
+
+        <h4>Opciones</h4>
+        <ul class="list-group">
+            <a class="list-group-item list-group-item-action" [routerLink]="['/colas/publico']">
+                Pantalla publica
+            </a>
+            <a class="list-group-item list-group-item-action" [routerLink]="['/colas/nuevo-ticket']">
+                Crear Tickets
+            </a>
+        </ul>
+
+    </div>
+
+    <div class="col-md-3 mx-auto">
+
+        <h4>Ingresar a escritorio</h4>
+
+        <div>
+            <select [(ngModel)]="escritorio" name="escritorio" class="form-control" required>
+                <option value="" selected>Selecciona Escritorio</option>
+                <option *ngFor="let esc of escritorios" value="{{esc.id}}">{{esc.nombre}}</option>
+            </select>
+
+            <br>
+
+            <button [routerLink]="['/colas/escritorio', escritorio]" [disabled]="escritorio===''" type="button"
+                class="btn btn-primary btn-block">
+                Ingresar
+            </button>
+        </div>
+    </div>
+    <div class="col-md-3 mx-auto"></div>
+</div>
+<app-footer-sockets></app-footer-sockets>
